@@ -1,0 +1,96 @@
+{
+  "strategy": "j3",
+  "expected_cases": 36,
+  "expected_records": 432,
+  "valid_records": 432,
+  "invalid_records": 0,
+  "reused_records": 153,
+  "totals": {
+    "correct_cases": 18,
+    "incorrect_cases": 18,
+    "other_target_flags_on_errors": 9,
+    "evidence_matched_hits": 9
+  },
+  "by_family_and_position": [
+    {
+      "family": "day",
+      "position": "early",
+      "correct_cases": 3,
+      "incorrect_cases": 3,
+      "evidence_matched_hits": 3
+    },
+    {
+      "family": "day",
+      "position": "late",
+      "correct_cases": 3,
+      "incorrect_cases": 3,
+      "evidence_matched_hits": 3
+    },
+    {
+      "family": "day",
+      "position": "middle",
+      "correct_cases": 3,
+      "incorrect_cases": 3,
+      "evidence_matched_hits": 3
+    },
+    {
+      "family": "destination",
+      "position": "early",
+      "correct_cases": 3,
+      "incorrect_cases": 3,
+      "other_target_flags_on_errors": 3
+    },
+    {
+      "family": "destination",
+      "position": "late",
+      "correct_cases": 3,
+      "incorrect_cases": 3,
+      "other_target_flags_on_errors": 3
+    },
+    {
+      "family": "destination",
+      "position": "middle",
+      "correct_cases": 3,
+      "incorrect_cases": 3,
+      "other_target_flags_on_errors": 3
+    }
+  ],
+  "paired_score_drops": {
+    "all_positions": {
+      "pairs": 18,
+      "mean": 8,
+      "decreases": 18,
+      "ties": 0,
+      "increases": 0
+    },
+    "early": {
+      "pairs": 6,
+      "mean": 7,
+      "decreases": 6,
+      "ties": 0,
+      "increases": 0
+    },
+    "target_reply_all_positions": {
+      "pairs": 18,
+      "mean": 7.6111,
+      "decreases": 18,
+      "ties": 0,
+      "increases": 0
+    },
+    "middle": {
+      "pairs": 6,
+      "mean": 9,
+      "decreases": 6,
+      "ties": 0,
+      "increases": 0
+    },
+    "late": {
+      "pairs": 6,
+      "mean": 8,
+      "decreases": 6,
+      "ties": 0,
+      "increases": 0
+    }
+  },
+  "labeling": "Automated exact-value and evidence-turn matching. Target flags on controls and other target flags on edits require independent review."
+}

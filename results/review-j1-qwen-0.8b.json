@@ -1,0 +1,5 @@
+{
+  "MUL1569.json": {"early": false, "25%": false, "middle": false, "75%": false, "late": false},
+  "PMUL0509.json": {"early": true, "25%": false, "middle": true, "75%": false, "late": true},
+  "PMUL1801.json": {"early": false, "25%": false, "middle": false, "75%": false, "late": false}
+}

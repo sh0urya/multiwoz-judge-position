@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage[final]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\title{Where Did It Go Wrong? Turn-Position Sensitivity of LLM Judges in Multi-Turn Task-Oriented Dialogue}
+\author{Sreehari Nair \and Yu-Chiao Chao \and Shreyas Arisa \and Shourya Adluri \\
+  \normalfont CS 6604 Final Project Milestone \\
+  \normalfont November 21, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+An LLM judge can miss a factual error in a task-oriented dialogue, or identify the error and assign the same overall score. We ask whether an error's position affects detection and scoring. Our feasibility pilot places a false train-route claim at five positions in three MultiWOZ 2.4 dialogues and runs two protocols with local Qwen3.5-9B. Under the pilot labeling rule, both protocols flagged the injected error in all 15 variants. Whole-dialogue scores fell in five cases, and lowest-turn scores fell in all 15. An audit found false alarms on the originals and differences in how naturally the injected sentence fit at each position. These findings inform the design of the controlled follow-up.
+\end{abstract}
+
+\section{Introduction}
+
+Task-oriented assistants carry user constraints across multiple turns. For example, a travel assistant can correctly identify the requested departure city at first and name another city later. A judge that scores the full conversation must connect the later claim to the original request, identify the error, and decide how much it affects the dialogue score. An overall score can obscure whether the judge found the underlying error.
+
+We ask three questions. First, does the position of a factual error affect its detection rate? Second, how much does the dialogue score change when the judge identifies the error? Third, does scoring individual replies with dialogue history or explicit state tracking change detection across positions? We hypothesize that a full-transcript judge detects fewer errors in the middle. The pilot tests the evaluation pipeline and identifies design changes needed to test that hypothesis.
+
+\section{Background}
+
+\citet{zheng2023judge} used LLMs to evaluate chat assistants and documented sensitivity to the order in which candidate responses are presented. \citet{shi2025judging} studied that order effect systematically. In our experiment, position refers to the chronological location of a flaw inside one transcript. \citet{liu2024lost} found that models often retrieve evidence less effectively when it appears near the middle of a long context. Their retrieval and question-answering results motivate our hypothesis about transcript grading.
+
+Prior work also examines flaws within conversations. \citet{ivry2026lalm} study the position of a localized unsafe turn in spoken dialogues, including a text-only judging condition. \citet{tang2026rankjudge} generate dialogue pairs with labeled flaws and measure whether judges identify the worse conversation, the flawed turn, and the type of failure. Our experiment focuses on factual contradictions in task-oriented dialogue and measures error detection separately from dialogue scores.
+
+\citet{bai2024mtbench} score individual assistant responses with their preceding history and take the lowest score as the dialogue grade. \citet{acikgoz2025tdeval} combine context-aware turn judgments with dialogue-level comparisons in task-oriented evaluation. These methods motivate our turnwise baselines. We use MultiWOZ 2.4 because its revised validation and test annotations support later analysis of dialogue-state tracking \citep{ye2022multiwoz}.
+
+\section{Pilot design}
+
+\paragraph{Data and edit.}
+We define an assistant turn as one assistant response and count ten or more responses as eligible. The MultiWOZ 2.4 test split yields 171 eligible dialogues. We reserve three for pilot development and sample 40 distinct candidates from the rest with a fixed seed. Those 40 dialogues are candidates for review and perturbation.
+
+Each pilot dialogue begins with a user specifying a train route. For each base dialogue, we append the same false departure or destination claim to exactly one assistant response in each of five variants. The target positions are the first response, responses nearest to 25\%, 50\%, and 75\% of the interval between the first and last responses, and the last response. The 15 edited transcripts each have an untouched counterpart among the three originals. All other turns stay identical. The user constraint is present before every edit, allowing the judge to identify the contradiction from the transcript.
+
+\paragraph{Judges.}
+The holistic baseline, J1, receives the complete transcript, assigns an integer score from 1 to 10, and lists up to three issues with turn numbers and explanations. J3 adapts the MT-Bench-101 minimum-turn method to task-oriented dialogue. Each call scores one assistant response and can flag an issue, with history available through that response. The dialogue score is the minimum over replies. Both protocols receive dialogue text only and use the same underlying model.
+
+\paragraph{Measures.}
+Under the pilot labeling rule, a detection flags the incorrect route claim at the edited turn. This rule allows a detection alongside a flawed justification. The paired score drop is the original score minus the edited score, with negative values indicating an increase after editing. We checked selected factual criticisms of the originals against the bundled train and restaurant records and distinguished database-verified false alarms from genuine issues already present in the original.
+
+\paragraph{Reproducibility.}
+The preparation script stores the base dialogue identifier, edit position, expected turn, and exact transcript for each case. It selects the 40 separate candidate dialogues using seed 42. Inference uses the saved prompt for each protocol and the same model and sampling settings across positions. The run logs store responses alongside parsed scores and issue descriptions, model settings, and hashes of the prompt and input cases. An identical dialogue prefix can share a deterministic J3 completion. We retain the resulting turn evaluations within each variant and distinguish reused evaluations from inference requests.
+
+\input{results}
+\input{control-results}
+
+\section{Changes since the proposal}
+
+The proposal targets 40 base dialogues, five error types, five positions, and five judging setups. We began with one error type and two judging protocols so that we could audit the pipeline and the judgments before scaling. Appending the same route claim at different positions changes its distance from the earlier evidence and its fit with the topic. For example, the Peterborough claim appears immediately before the appended Ely claim in the 25\% variant, while the late variant attaches Ely to a goodbye. Later replies may also appear to repair an earlier mistake. The three base dialogues, conspicuous edits, and saturated detection limit what this pilot can establish about position.
+
+The protocols also differ in the evidence they see and the number of issues they can report. J1 sees later turns and can list three issues in total. J3 flags issues one reply at a time, with the assessed reply always at the end of its input. This design compares the two protocols as complete systems. To test the effect of context access more directly, the follow-up will ask the full-transcript and prefix judges for the same evidence-backed verdict for each reply. Comparing aggregations on the same per-turn scores isolates the effect of the aggregation rule.
+
+\section{Controlled follow-up}
+
+\paragraph{Varying position.}
+The next run will use six fresh MultiWOZ-based scenarios, three with a destination constraint and three with a booking-date constraint. Each scenario will have an evidence-and-reply exchange that can move early, to the middle, or late among comparable exchanges. We will keep the chronological window from the constraint to the reply fixed and match the two alternatives at each position. For example, if the user asks to arrive in Peterborough, a confirmation at the target turn can use Peterborough or Ely. Only the confirmed value changes across the two versions. A booking-date item can use the same design with a requested date and a nearby alternative. The three positions and two values produce six variants per scenario, for 36 transcripts.
+
+An exchange can move only when the surrounding turns preserve its meaning in all positions. A later clarification, an explicit change of mind, or a later action that depends on the faulty value may introduce a second detectable issue or change the stakes of the first. We plan to keep cases whose surrounding turns leave the supporting constraint, consequences, and plausibility comparable across positions. We will preserve dialogue length within each scenario where possible and record the exact target index. The main test uses facts established in the transcript. Database-grounded issues would require a separate evidence condition that supplies the same task-relevant records to both protocols.
+
+\paragraph{Validation and readiness.}
+Two reviewers will independently check the original constraint, the targeted reply, and the correctly matched version at each position before seeing model scores. They will verify that the incorrect transcript contains one intended violation, that the correct counterpart fulfills the recorded constraint, and that both read naturally. We will document exclusions and adjudicate disagreements using the transcript. Eligibility depends on these checks and is independent of the judge scores on originals. The run will also check that the judge returns a usable verdict for every case. We will proceed to scale when the matched pairs pass review, the primary detector has both hits and misses across scenarios, and it produces at most one targeted false alarm over the 18 correct counterparts.
+
+\paragraph{Outcomes and analysis.}
+Each follow-up detection will require the corrupted reply, the specific violated constraint, and a reference to its supporting text. We will retain partial hits separately and report the correct counterpart's score minus its faulty counterpart's score as a signed paired change. For the turnwise judge, we will also report the targeted reply's own score change and which reply set the dialogue minimum. On controls, distinguishing factual false alarms from valid observations about an existing flaw or awkward phrasing helps explain why a score may change.
+
+We will preserve base scenario identifiers and assign distinct identifiers to error families, positions, and correct-or-incorrect variants. All variants of one base scenario remain in the same calibration or evaluation split. We will report detection counts by position with their denominators and select the middle-versus-ends contrast before the larger run. For uncertainty estimates, we will resample base dialogues with all of their paired variants together. The six-scenario result will guide validation and error difficulty. Estimation of position effects and any comparison across additional judge protocols depend on the larger held-out set.
+
+\section{Remaining work}
+
+\begin{itemize}
+  \item \textbf{Nov. 21--24.} Prepare and independently verify the matched cases, run the 36-transcript follow-up locally, and check the readiness criteria.
+  \item \textbf{Nov. 25--30.} Freeze the labels and selection rules. Expand the dataset as validation allows, prioritizing J1 and J3. Add the constraint rubric, the TD-EVAL adaptation, and the state-tracking judge as compute permits. Compare tracked state with dataset annotations and with state tracking disabled.
+  \item \textbf{Dec. 1--8.} Analyze position effects with paired uncertainty, audit representative errors, and reproduce the tables and figures from saved outputs. Present the poster on Dec. 3 and use feedback to revise the final paper and code for Dec. 8.
+\end{itemize}
+
+\section*{Acknowledgements}
+The proposal disclosed using Claude and Gemini for brainstorming. Codex assisted with code, audit checks, and drafting this milestone.
+
+\clearpage
+\bibliography{references}
+
+\end{document}

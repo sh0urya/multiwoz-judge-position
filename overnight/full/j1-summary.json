@@ -1,0 +1,245 @@
+{
+  "strategy": "j1",
+  "expected_cases": 2000,
+  "expected_records": 2000,
+  "valid_records": 2000,
+  "invalid_records": 0,
+  "reused_records": 800,
+  "totals": {
+    "correct_cases": 1000,
+    "incorrect_cases": 1000,
+    "other_target_flags_on_errors": 510,
+    "evidence_matched_hits": 142
+  },
+  "by_family_and_position": [
+    {
+      "family": "day",
+      "position": "25%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "evidence_matched_hits": 22,
+      "other_target_flags_on_errors": 3
+    },
+    {
+      "family": "day",
+      "position": "75%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "evidence_matched_hits": 35,
+      "other_target_flags_on_errors": 2
+    },
+    {
+      "family": "day",
+      "position": "early",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "evidence_matched_hits": 14
+    },
+    {
+      "family": "day",
+      "position": "late",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 7,
+      "evidence_matched_hits": 33
+    },
+    {
+      "family": "day",
+      "position": "middle",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "evidence_matched_hits": 27,
+      "other_target_flags_on_errors": 1
+    },
+    {
+      "family": "departure",
+      "position": "25%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 6,
+      "evidence_matched_hits": 1
+    },
+    {
+      "family": "departure",
+      "position": "75%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 22,
+      "evidence_matched_hits": 2
+    },
+    {
+      "family": "departure",
+      "position": "early",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 12,
+      "evidence_matched_hits": 1
+    },
+    {
+      "family": "departure",
+      "position": "late",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "evidence_matched_hits": 6,
+      "other_target_flags_on_errors": 30
+    },
+    {
+      "family": "departure",
+      "position": "middle",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 13,
+      "evidence_matched_hits": 1
+    },
+    {
+      "family": "destination",
+      "position": "25%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 23
+    },
+    {
+      "family": "destination",
+      "position": "75%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 33
+    },
+    {
+      "family": "destination",
+      "position": "early",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 16
+    },
+    {
+      "family": "destination",
+      "position": "late",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 38
+    },
+    {
+      "family": "destination",
+      "position": "middle",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 29
+    },
+    {
+      "family": "party_size",
+      "position": "25%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 40
+    },
+    {
+      "family": "party_size",
+      "position": "75%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 40
+    },
+    {
+      "family": "party_size",
+      "position": "early",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 27
+    },
+    {
+      "family": "party_size",
+      "position": "late",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 40
+    },
+    {
+      "family": "party_size",
+      "position": "middle",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 40
+    },
+    {
+      "family": "time_cutoff",
+      "position": "25%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 14
+    },
+    {
+      "family": "time_cutoff",
+      "position": "75%",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 21
+    },
+    {
+      "family": "time_cutoff",
+      "position": "early",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 5
+    },
+    {
+      "family": "time_cutoff",
+      "position": "late",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 35
+    },
+    {
+      "family": "time_cutoff",
+      "position": "middle",
+      "correct_cases": 40,
+      "incorrect_cases": 40,
+      "other_target_flags_on_errors": 13
+    }
+  ],
+  "paired_score_drops": {
+    "all_positions": {
+      "pairs": 1000,
+      "mean": 3.436,
+      "decreases": 652,
+      "ties": 348,
+      "increases": 0
+    },
+    "early": {
+      "pairs": 200,
+      "mean": 2.675,
+      "decreases": 75,
+      "ties": 125,
+      "increases": 0
+    },
+    "25%": {
+      "pairs": 200,
+      "mean": 2.77,
+      "decreases": 109,
+      "ties": 91,
+      "increases": 0
+    },
+    "middle": {
+      "pairs": 200,
+      "mean": 3.225,
+      "decreases": 124,
+      "ties": 76,
+      "increases": 0
+    },
+    "75%": {
+      "pairs": 200,
+      "mean": 3.895,
+      "decreases": 155,
+      "ties": 45,
+      "increases": 0
+    },
+    "late": {
+      "pairs": 200,
+      "mean": 4.615,
+      "decreases": 189,
+      "ties": 11,
+      "increases": 0
+    }
+  },
+  "labeling": "Automated exact-value and evidence-turn matching. Target flags on controls and other target flags on edits require independent review."
+}

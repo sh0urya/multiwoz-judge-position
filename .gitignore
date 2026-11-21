@@ -1,0 +1,12 @@
+__pycache__/
+.DS_Store
+.env
+.env.*
+overnight/.run.lock
+overnight/server.log
+overnight-reproduction/
+milestone/*.aux
+milestone/*.bbl
+milestone/*.blg
+milestone/*.log
+milestone/*.out

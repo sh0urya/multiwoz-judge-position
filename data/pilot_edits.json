@@ -1,0 +1,20 @@
+[
+  {
+    "dialogue_id": "PMUL0509.json",
+    "error_type": "wrong_train_route",
+    "contradicted_request": "The train should depart from Norwich.",
+    "false_claim": "Your train departure city is Ely."
+  },
+  {
+    "dialogue_id": "MUL1569.json",
+    "error_type": "wrong_train_route",
+    "contradicted_request": "The train should depart from London Kings Cross.",
+    "false_claim": "Your train departure station is Ely."
+  },
+  {
+    "dialogue_id": "PMUL1801.json",
+    "error_type": "wrong_train_route",
+    "contradicted_request": "The train should go to Peterborough.",
+    "false_claim": "Your train destination is Ely."
+  }
+]

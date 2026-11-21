@@ -1,0 +1,23 @@
+{
+  "PMUL0509.json": {
+    "early": [],
+    "25%": [],
+    "middle": ["contextual_misreading"],
+    "75%": [],
+    "late": ["route_challenge", "placement"]
+  },
+  "MUL1569.json": {
+    "early": [],
+    "25%": [],
+    "middle": [],
+    "75%": ["placement"],
+    "late": ["placement"]
+  },
+  "PMUL1801.json": {
+    "early": [],
+    "25%": ["placement"],
+    "middle": [],
+    "75%": [],
+    "late": ["route_challenge", "truncated_ambiguous_rationale"]
+  }
+}

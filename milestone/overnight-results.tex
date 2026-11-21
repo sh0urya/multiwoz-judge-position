@@ -1,0 +1,35 @@
+\section{Overnight Qwen results (preliminary)}
+\label{sec:overnight}
+
+\paragraph{Constructed test cases.}
+The overnight run used train-search requirements from MultiWOZ 2.4 test goals. We constructed each 12-reply dialogue around a two-exchange readback block and four independent travel-related blocks. Within a scenario, the readback block moves while the wording and order of the other blocks stay fixed. A correct and an incorrect transcript at each position differ in exactly one readback value. The user states the supporting requirement one exchange before the readback in every variant. Some party sizes were constructed where the source goal lacked one.
+
+We ran a 36-transcript pilot from six source goals, covering destination and day errors at three positions. The full batch used 40 separate source goals, each crossed with five errors (departure, destination, day, time cutoff, and party size) at five positions (assistant replies 3, 5, 7, 9, and 11). This yielded 1,000 edited transcripts and 1,000 paired correct versions. The five errors at a given source and position share the same correct transcript, yielding 200 distinct correct versions.
+
+\paragraph{Judging and detection.}
+We ran Qwen3.5-9B locally on a Mac using llama.cpp, with Q4\_K\_M quantization, thinking disabled, temperature zero, and \$0 in API spend. J1 reviewed the whole dialogue and could return one issue per reply. J3 reviewed each reply with its preceding history and used the minimum turn score for the dialogue. An issue recorded the assistant reply, supporting user turn, observed value, and expected value. A raw flag is any issue recorded at the edited reply. The stricter automated match also requires the recorded supporting user turn and both values to match the case metadata after normalization. This check can miss correct phrases that include extra words.
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{lrr}
+    \toprule
+    Readback position & J1 & J3 \\
+    \midrule
+    Early & 75 & 186 \\
+    25\% & 109 & 193 \\
+    Middle & 124 & 187 \\
+    75\% & 155 & 189 \\
+    Late & 189 & 190 \\
+    \midrule
+    Total & 652 & 945 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Raw edited-reply flags in the preliminary full batch. Each position contains 200 edits.}
+  \label{tab:overnight-flags}
+\end{table}
+
+\paragraph{Results.}
+In the 18 pilot pairs, J1 flagged 11 edited replies and J3 flagged 18. Strict matches totaled 3 and 9, respectively. The full batch yielded 2,000 J1 dialogue judgments and 24,000 J3 turn judgments, with reuse for identical inputs. J1 flagged 652 edited replies and J3 flagged 945 (Table~\ref{tab:overnight-flags}). Strict matches totaled 142 and 232. Both judges recorded zero target-reply flags on the 1,000 paired correct versions. Relative to the matched correct cases, dialogue scores fell in 652 J1 pairs and 947 J3 pairs, with mean decreases of 3.44 and 7.42 points on the 1--10 scale. J3 recorded 2,083 flags after the edited reply across 784 edited cases, and its minimum fell below the edited reply's score in 59 cases. These later flags require review because only the readback was changed.
+
+\paragraph{Interpretation.}
+J1 flagged more edits at later positions in this batch, while J3 flags varied less by position. The protocols have different input scopes, and the transcripts share templates and source goals. The 1,000 edits therefore represent repeated comparisons within 40 source goals. Treat these results as descriptive pending blinded team review of the cases and cited evidence. Analyze uncertainty at the source-goal level after review, and test whether the pattern extends to naturally occurring dialogues.

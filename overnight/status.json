@@ -1,0 +1,17 @@
+{
+  "active_stage": null,
+  "state": "complete",
+  "completed_stages": [
+    "pilot/j1",
+    "pilot/j3",
+    "full/j1",
+    "full/j3"
+  ],
+  "pilot_cases": 36,
+  "full_edited_cases": 1000,
+  "full_control_cases": 1000,
+  "model": "Qwen3.5-9B-Q4_K_M",
+  "milestone_original_sha256": "a9fe9e0ba3b7bdee5117d06ac9b1c0b9ca56fb89d19cfac929497429f4f81e08",
+  "updated_at": "2026-11-21T01:33:56-05:00",
+  "milestone_unchanged": true
+}

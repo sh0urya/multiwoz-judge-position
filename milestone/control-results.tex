@@ -1,0 +1,28 @@
+\subsection{Correct-route placement controls}
+
+We tested whether the appended sentence could attract criticism even when the route was correct. For each of the 15 route-error variants, we kept the sentence in the same reply and replaced only Ely with the correct requested location. These controls preserve the placement and phrasing of the appended claim. Place names can differ in length. We reran J1 with the same prompt, model and decoding settings on the 15 counterparts using the local model. All 15 returned valid judgments.
+
+We coded a placement flag when the explanation explicitly criticized the appended claim's timing, repetition or relevance. We coded a route challenge when the explanation called the correct location wrong or unsupported. Both tallies are specific to the appended claim and can overlap.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{lrr}
+    \toprule
+    Position & Placement flags & Route challenges \\
+    \midrule
+    Early & 0 & 0 \\
+    25\% & 1 & 0 \\
+    Middle & 0 & 0 \\
+    75\% & 1 & 0 \\
+    Late & 2 & 2 \\
+    \midrule
+    Total & 4 & 2 \\
+    \bottomrule
+  \end{tabular}
+  \caption{J1 flags on the correct-route controls. Each position has three variants. One late route challenge is ambiguous because the explanation also acknowledges the correct destination and ends mid-sentence.}
+  \label{tab:route-controls}
+\end{table}
+
+J1 flagged placement in four controls, including two closing turns (Table~\ref{tab:route-controls}). In the late Norwich control, J1 correctly recognized that the train task was over and called the requested departure city a hallucination. In the late Peterborough control, J1 called the destination statement incorrect, then acknowledged that the user had requested Peterborough. We count that response as an explicit challenge and treat its rationale as ambiguous.
+
+Relative to these matched correct-route controls, false-route copies scored lower in six pairs, tied in seven, and scored higher in two. The correct-route controls themselves tied the untouched originals in 13 pairs, scored lower in one, and scored higher in one. These comparisons show that J1 can object to the placement of a factual statement and can raise a factual concern about a correct one. With three base dialogues, the controls illustrate the confound and motivate the redesigned pilot.
