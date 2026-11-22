@@ -1,0 +1,70 @@
+{
+ "J1": {
+  "values+evidence (contains)": {
+   "early": 75,
+   "25%": 96,
+   "middle": 105,
+   "75%": 150,
+   "late": 142
+  },
+  "values only (contains)": {
+   "early": 75,
+   "25%": 109,
+   "middle": 124,
+   "75%": 155,
+   "late": 189
+  },
+  "totals": [
+   568,
+   652
+  ],
+  "later_flags": 0,
+  "later_flags_quoting_the_wrong_value": 0,
+  "by_family_values+evidence": {
+   "departure": 89,
+   "destination": 108,
+   "day": 139,
+   "time_cutoff": 73,
+   "party_size": 159
+  },
+  "late_minus_early_values+evidence": [
+   0.335,
+   0.215,
+   0.45
+  ]
+ },
+ "J3": {
+  "values+evidence (contains)": {
+   "early": 179,
+   "25%": 156,
+   "middle": 168,
+   "75%": 180,
+   "late": 185
+  },
+  "values only (contains)": {
+   "early": 186,
+   "25%": 193,
+   "middle": 187,
+   "75%": 189,
+   "late": 190
+  },
+  "totals": [
+   868,
+   945
+  ],
+  "later_flags": 2083,
+  "later_flags_quoting_the_wrong_value": 1625,
+  "by_family_values+evidence": {
+   "departure": 193,
+   "destination": 169,
+   "day": 195,
+   "time_cutoff": 135,
+   "party_size": 176
+  },
+  "late_minus_early_values+evidence": [
+   0.03,
+   -0.025,
+   0.08
+  ]
+ }
+}

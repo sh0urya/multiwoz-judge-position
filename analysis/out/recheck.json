@@ -1,0 +1,615 @@
+{
+  "J1": {
+    "control_rows": 1000,
+    "distinct_control_transcripts": 200,
+    "distinct_controls_target_flag": 0,
+    "distinct_controls_any_flag": 0,
+    "edited_with_flags_on_other_turns": 0,
+    "other_turn_flags_on_edited_total": 0,
+    "raw_total": 652,
+    "strict_total": 142,
+    "by_family_raw_strict": {
+      "departure": {
+        "early": [
+          13,
+          1
+        ],
+        "25%": [
+          7,
+          1
+        ],
+        "middle": [
+          14,
+          1
+        ],
+        "75%": [
+          24,
+          2
+        ],
+        "late": [
+          36,
+          6
+        ]
+      },
+      "destination": {
+        "early": [
+          16,
+          0
+        ],
+        "25%": [
+          23,
+          0
+        ],
+        "middle": [
+          29,
+          0
+        ],
+        "75%": [
+          33,
+          0
+        ],
+        "late": [
+          38,
+          0
+        ]
+      },
+      "day": {
+        "early": [
+          14,
+          14
+        ],
+        "25%": [
+          25,
+          22
+        ],
+        "middle": [
+          28,
+          27
+        ],
+        "75%": [
+          37,
+          35
+        ],
+        "late": [
+          40,
+          33
+        ]
+      },
+      "time_cutoff": {
+        "early": [
+          5,
+          0
+        ],
+        "25%": [
+          14,
+          0
+        ],
+        "middle": [
+          13,
+          0
+        ],
+        "75%": [
+          21,
+          0
+        ],
+        "late": [
+          35,
+          0
+        ]
+      },
+      "party_size": {
+        "early": [
+          27,
+          0
+        ],
+        "25%": [
+          40,
+          0
+        ],
+        "middle": [
+          40,
+          0
+        ],
+        "75%": [
+          40,
+          0
+        ],
+        "late": [
+          40,
+          0
+        ]
+      }
+    }
+  },
+  "J3": {
+    "control_rows": 1000,
+    "distinct_control_transcripts": 200,
+    "distinct_controls_target_flag": 0,
+    "distinct_controls_any_flag": 0,
+    "edited_with_flags_on_other_turns": 784,
+    "other_turn_flags_on_edited_total": 2083,
+    "raw_total": 945,
+    "strict_total": 232,
+    "by_family_raw_strict": {
+      "departure": {
+        "early": [
+          40,
+          10
+        ],
+        "25%": [
+          40,
+          7
+        ],
+        "middle": [
+          40,
+          9
+        ],
+        "75%": [
+          40,
+          5
+        ],
+        "late": [
+          40,
+          7
+        ]
+      },
+      "destination": {
+        "early": [
+          38,
+          0
+        ],
+        "25%": [
+          40,
+          0
+        ],
+        "middle": [
+          40,
+          0
+        ],
+        "75%": [
+          40,
+          0
+        ],
+        "late": [
+          40,
+          0
+        ]
+      },
+      "day": {
+        "early": [
+          40,
+          40
+        ],
+        "25%": [
+          40,
+          37
+        ],
+        "middle": [
+          40,
+          40
+        ],
+        "75%": [
+          40,
+          37
+        ],
+        "late": [
+          40,
+          40
+        ]
+      },
+      "time_cutoff": {
+        "early": [
+          28,
+          0
+        ],
+        "25%": [
+          33,
+          0
+        ],
+        "middle": [
+          27,
+          0
+        ],
+        "75%": [
+          29,
+          0
+        ],
+        "late": [
+          30,
+          0
+        ]
+      },
+      "party_size": {
+        "early": [
+          40,
+          0
+        ],
+        "25%": [
+          40,
+          0
+        ],
+        "middle": [
+          40,
+          0
+        ],
+        "75%": [
+          40,
+          0
+        ],
+        "late": [
+          40,
+          0
+        ]
+      }
+    }
+  },
+  "per_position": {
+    "J1": {
+      "early": {
+        "raw": 0.375,
+        "raw_ci": [
+          0.3,
+          0.455
+        ],
+        "strict": 0.075,
+        "strict_ci": [
+          0.045,
+          0.105
+        ],
+        "drop": 2.675,
+        "drop_ci": [
+          2.11,
+          3.24
+        ],
+        "n": 200,
+        "raw_count": 75,
+        "strict_count": 15
+      },
+      "25%": {
+        "raw": 0.545,
+        "raw_ci": [
+          0.47,
+          0.62
+        ],
+        "strict": 0.115,
+        "strict_ci": [
+          0.08,
+          0.15
+        ],
+        "drop": 2.77,
+        "drop_ci": [
+          2.37,
+          3.17
+        ],
+        "n": 200,
+        "raw_count": 109,
+        "strict_count": 23
+      },
+      "middle": {
+        "raw": 0.62,
+        "raw_ci": [
+          0.55,
+          0.695
+        ],
+        "strict": 0.14,
+        "strict_ci": [
+          0.11,
+          0.17
+        ],
+        "drop": 3.225,
+        "drop_ci": [
+          2.815,
+          3.64
+        ],
+        "n": 200,
+        "raw_count": 124,
+        "strict_count": 28
+      },
+      "75%": {
+        "raw": 0.775,
+        "raw_ci": [
+          0.705,
+          0.84
+        ],
+        "strict": 0.185,
+        "strict_ci": [
+          0.16,
+          0.21
+        ],
+        "drop": 3.895,
+        "drop_ci": [
+          3.535,
+          4.24
+        ],
+        "n": 200,
+        "raw_count": 155,
+        "strict_count": 37
+      },
+      "late": {
+        "raw": 0.945,
+        "raw_ci": [
+          0.915,
+          0.975
+        ],
+        "strict": 0.195,
+        "strict_ci": [
+          0.165,
+          0.23
+        ],
+        "drop": 4.615,
+        "drop_ci": [
+          4.46,
+          4.77
+        ],
+        "n": 200,
+        "raw_count": 189,
+        "strict_count": 39
+      },
+      "late_minus_early_raw": [
+        0.57,
+        [
+          0.495,
+          0.64
+        ]
+      ],
+      "ends_minus_middle_raw": [
+        0.04,
+        [
+          -0.022,
+          0.105
+        ]
+      ],
+      "late_minus_early_strict": [
+        0.12,
+        [
+          0.075,
+          0.165
+        ]
+      ],
+      "ends_minus_middle_strict": [
+        -0.005,
+        [
+          -0.04,
+          0.028
+        ]
+      ],
+      "late_minus_early_drop": [
+        1.94,
+        [
+          1.41,
+          2.465
+        ]
+      ],
+      "ends_minus_middle_drop": [
+        0.42,
+        [
+          0.038,
+          0.797
+        ]
+      ]
+    },
+    "J3": {
+      "early": {
+        "raw": 0.93,
+        "raw_ci": [
+          0.895,
+          0.96
+        ],
+        "strict": 0.25,
+        "strict_ci": [
+          0.225,
+          0.28
+        ],
+        "drop": 7.19,
+        "drop_ci": [
+          6.985,
+          7.38
+        ],
+        "n": 200,
+        "raw_count": 186,
+        "strict_count": 50
+      },
+      "25%": {
+        "raw": 0.965,
+        "raw_ci": [
+          0.94,
+          0.985
+        ],
+        "strict": 0.22,
+        "strict_ci": [
+          0.19,
+          0.25
+        ],
+        "drop": 6.17,
+        "drop_ci": [
+          5.9,
+          6.44
+        ],
+        "n": 200,
+        "raw_count": 193,
+        "strict_count": 44
+      },
+      "middle": {
+        "raw": 0.935,
+        "raw_ci": [
+          0.905,
+          0.965
+        ],
+        "strict": 0.245,
+        "strict_ci": [
+          0.22,
+          0.27
+        ],
+        "drop": 8.085,
+        "drop_ci": [
+          7.79,
+          8.385
+        ],
+        "n": 200,
+        "raw_count": 187,
+        "strict_count": 49
+      },
+      "75%": {
+        "raw": 0.945,
+        "raw_ci": [
+          0.915,
+          0.97
+        ],
+        "strict": 0.21,
+        "strict_ci": [
+          0.185,
+          0.24
+        ],
+        "drop": 7.95,
+        "drop_ci": [
+          7.665,
+          8.23
+        ],
+        "n": 200,
+        "raw_count": 189,
+        "strict_count": 42
+      },
+      "late": {
+        "raw": 0.95,
+        "raw_ci": [
+          0.92,
+          0.975
+        ],
+        "strict": 0.235,
+        "strict_ci": [
+          0.215,
+          0.26
+        ],
+        "drop": 7.72,
+        "drop_ci": [
+          7.43,
+          7.98
+        ],
+        "n": 200,
+        "raw_count": 190,
+        "strict_count": 47
+      },
+      "late_minus_early_raw": [
+        0.02,
+        [
+          -0.01,
+          0.05
+        ]
+      ],
+      "ends_minus_middle_raw": [
+        0.005,
+        [
+          -0.015,
+          0.027
+        ]
+      ],
+      "late_minus_early_strict": [
+        -0.015,
+        [
+          -0.035,
+          0.0
+        ]
+      ],
+      "ends_minus_middle_strict": [
+        -0.003,
+        [
+          -0.015,
+          0.01
+        ]
+      ],
+      "late_minus_early_drop": [
+        0.53,
+        [
+          0.26,
+          0.805
+        ]
+      ],
+      "ends_minus_middle_drop": [
+        -0.63,
+        [
+          -0.885,
+          -0.365
+        ]
+      ]
+    }
+  },
+  "later_restatement": {
+    "25%|correct": 1,
+    "25%|incorrect": 1,
+    "75%|incorrect": 1,
+    "early|correct": 1,
+    "early|incorrect": 1,
+    "middle|incorrect": 1
+  },
+  "j3_other_turn_flags": {
+    "incorrect|after": 2083
+  },
+  "j3_other_examples": [
+    {
+      "case": "full:PMUL0732.json:day:early:incorrect",
+      "turn": 12,
+      "issue": {
+        "turn": 12,
+        "supporting_user_turn": 12,
+        "observed_value": "You're welcome. Safe travels!",
+        "expected_value": "That's everything I needed. Thank you!"
+      },
+      "assistant_text": "You're welcome. Safe travels!"
+    },
+    {
+      "case": "full:PMUL0732.json:party_size:early:incorrect",
+      "turn": 4,
+      "issue": {
+        "turn": 4,
+        "supporting_user_turn": 3,
+        "observed_value": "The number of travelers is 6.",
+        "expected_value": "the number of travelers is 5."
+      },
+      "assistant_text": "Coil the cable and put it in its own small pouch."
+    },
+    {
+      "case": "full:PMUL0732.json:party_size:early:incorrect",
+      "turn": 12,
+      "issue": {
+        "turn": 12,
+        "supporting_user_turn": 12,
+        "observed_value": "You're welcome. Safe travels!",
+        "expected_value": "That's everything I needed. Thank you!"
+      },
+      "assistant_text": "You're welcome. Safe travels!"
+    },
+    {
+      "case": "full:PMUL0732.json:departure:25%:incorrect",
+      "turn": 6,
+      "issue": {
+        "turn": 6,
+        "supporting_user_turn": 5,
+        "observed_value": "I'll look for a train from London Liverpool Street to Peterborough on Saturday, ",
+        "expected_value": "I'm leaving from Cambridge and going to Peterborough"
+      },
+      "assistant_text": "Use a bookmark to mark the next blank page."
+    },
+    {
+      "case": "full:PMUL0732.json:destination:25%:incorrect",
+      "turn": 6,
+      "issue": {
+        "turn": 6,
+        "supporting_user_turn": 5,
+        "observed_value": "I'll look for a train from Cambridge to Norwich on Saturday, arriving by 15:45. ",
+        "expected_value": "I'm leaving from Cambridge and going to Peterborough on Saturday. I need to..."
+      },
+      "assistant_text": "Use a bookmark to mark the next blank page."
+    },
+    {
+      "case": "full:PMUL0732.json:destination:25%:incorrect",
+      "turn": 7,
+      "issue": {
+        "turn": 7,
+        "supporting_user_turn": 5,
+        "observed_value": "I'll look for a train from Cambridge to Norwich on Saturday, arriving by 15:45. ",
+        "expected_value": "I'm leaving from Cambridge and going to Peterborough on Saturday. "
+      },
+      "assistant_text": "Keep a simple index on the inside cover."
+    }
+  ]
+}
